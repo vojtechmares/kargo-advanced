@@ -9,3 +9,11 @@ spec:
   promotionPolicies:
     - stage: dev
       autoPromotionEnabled: true
+    - stage: staging
+      autoPromotionEnabled: true
+    - stage: prod-east
+      autoPromotionEnabled: true
+    - stage: prod-west
+      autoPromotionEnabled: true
+    - stage: prod-central
+      autoPromotionEnabled: true
