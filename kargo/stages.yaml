@@ -10,11 +10,11 @@ spec:
     warehouse: guestbook
   promotionMechanisms:
     gitRepoUpdates:
-    - repoURL: https://github.com/vojtechmares/kargo-advanced.git
-      writeBranch: env/dev
-      render: {}
+      - repoURL: https://github.com/vojtechmares/kargo-advanced.git
+        writeBranch: env/dev
+        render: {}
     argoCDAppUpdates:
-    - appName: guestbook-dev
+      - appName: guestbook-dev
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -30,11 +30,11 @@ spec:
       - name: dev
   promotionMechanisms:
     gitRepoUpdates:
-    - repoURL: https://github.com/vojtechmares/kargo-advanced.git
-      writeBranch: env/staging
-      render: {}
+      - repoURL: https://github.com/vojtechmares/kargo-advanced.git
+        writeBranch: env/staging
+        render: {}
     argoCDAppUpdates:
-    - appName: guestbook-staging
+      - appName: guestbook-staging
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -50,14 +50,14 @@ spec:
       - name: staging
   promotionMechanisms:
     gitRepoUpdates:
-    - repoURL: https://github.com/vojtechmares/kargo-advanced.git
-      writeBranch: env/ab-test-a
-      render: {}
+      - repoURL: https://github.com/vojtechmares/kargo-advanced.git
+        writeBranch: env/ab-test-a
+        render: {}
     argoCDAppUpdates:
-    - appName: guestbook-ab-test-a
+      - appName: guestbook-ab-test-a
   verification:
     analysisTemplates:
-    - name: cat-fact
+      - name: cat-fact
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -73,14 +73,14 @@ spec:
       - name: staging
   promotionMechanisms:
     gitRepoUpdates:
-    - repoURL: https://github.com/vojtechmares/kargo-advanced.git
-      writeBranch: env/ab-test-b
-      render: {}
+      - repoURL: https://github.com/vojtechmares/kargo-advanced.git
+        writeBranch: env/ab-test-b
+        render: {}
     argoCDAppUpdates:
-    - appName: guestbook-ab-test-b
+      - appName: guestbook-ab-test-b
   verification:
     analysisTemplates:
-    - name: cat-fact-fail
+      - name: cat-fact-fail
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -95,6 +95,13 @@ spec:
     upstreamStages:
       - name: ab-test-a
       - name: ab-test-b
+  promotionMechanisms:
+    gitRepoUpdates:
+      - repoURL: https://github.com/vojtechmares/kargo-advanced.git
+        writeBranch: env/prod
+        render: {}
+    argoCDAppUpdates:
+      - appName: guestbook-prod
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -110,11 +117,11 @@ spec:
       - name: prod
   promotionMechanisms:
     gitRepoUpdates:
-    - repoURL: https://github.com/vojtechmares/kargo-advanced.git
-      writeBranch: env/prod-west
-      render: {}
+      - repoURL: https://github.com/vojtechmares/kargo-advanced.git
+        writeBranch: env/prod-west
+        render: {}
     argoCDAppUpdates:
-    - appName: guestbook-prod-west
+      - appName: guestbook-prod-west
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -130,11 +137,11 @@ spec:
       - name: prod
   promotionMechanisms:
     gitRepoUpdates:
-    - repoURL: https://github.com/vojtechmares/kargo-advanced.git
-      writeBranch: env/prod-central
-      render: {}
+      - repoURL: https://github.com/vojtechmares/kargo-advanced.git
+        writeBranch: env/prod-central
+        render: {}
     argoCDAppUpdates:
-    - appName: guestbook-prod-central
+      - appName: guestbook-prod-central
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
@@ -150,8 +157,8 @@ spec:
       - name: prod
   promotionMechanisms:
     gitRepoUpdates:
-    - repoURL: https://github.com/vojtechmares/kargo-advanced.git
-      writeBranch: env/prod-east
-      render: {}
+      - repoURL: https://github.com/vojtechmares/kargo-advanced.git
+        writeBranch: env/prod-east
+        render: {}
     argoCDAppUpdates:
-    - appName: guestbook-prod-east
+      - appName: guestbook-prod-east
