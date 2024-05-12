@@ -15,6 +15,9 @@ spec:
         render: {}
     argoCDAppUpdates:
       - appName: guestbook-dev
+  verification:
+    analysisTemplates:
+      - name: cat-fact
 
 ---
 apiVersion: kargo.akuity.io/v1alpha1
