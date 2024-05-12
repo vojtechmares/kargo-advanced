@@ -63,4 +63,4 @@ spec:
       - appName: guestbook-prod-west
   verification:
     analysisTemplates:
-      - name: cat-fact
+      - name: cat-fact-fail
