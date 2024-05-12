@@ -46,30 +46,7 @@ spec:
 apiVersion: kargo.akuity.io/v1alpha1
 kind: Stage
 metadata:
-  name: ab-test-b
-  namespace: kargo-advanced
-  annotations:
-    kargo.akuity.io/color: green
-spec:
-  subscriptions:
-    upstreamStages:
-      - name: staging
-  promotionMechanisms:
-    gitRepoUpdates:
-      - repoURL: https://github.com/vojtechmares/kargo-advanced.git
-        writeBranch: env/ab-test-b
-        render: {}
-    argoCDAppUpdates:
-      - appName: guestbook-ab-test-b
-  verification:
-    analysisTemplates:
-      - name: cat-fact-fail
-
----
-apiVersion: kargo.akuity.io/v1alpha1
-kind: Stage
-metadata:
-  name: prod
+  name: prod-west
   namespace: kargo-advanced
   annotations:
     kargo.akuity.io/color: blue
@@ -80,10 +57,10 @@ spec:
   promotionMechanisms:
     gitRepoUpdates:
       - repoURL: https://github.com/vojtechmares/kargo-advanced.git
-        writeBranch: env/prod
+        writeBranch: env/prod-west
         render: {}
     argoCDAppUpdates:
-      - appName: guestbook-prod
+      - appName: guestbook-prod-west
   verification:
     analysisTemplates:
       - name: cat-fact
