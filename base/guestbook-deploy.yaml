@@ -14,8 +14,12 @@ spec:
         app: guestbook
     spec:
       containers:
-      - image: ghcr.io/vojtechmares/guestbook:latest
-        name: guestbook
-        ports:
-        - name: http
-          containerPort: 3000
+        - image: ghcr.io/vojtechmares/guestbook:latest
+          name: guestbook
+          ports:
+            - name: http
+              containerPort: 3000
+          resources:
+            limits:
+              cpu: 10m
+              memory: 32Mi
