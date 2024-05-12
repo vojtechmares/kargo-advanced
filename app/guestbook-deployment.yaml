@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook
-  namespace: guestbook-prod-west
+  namespace: guestbook-prod
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -15,8 +15,12 @@ spec:
         app: guestbook
     spec:
       containers:
-      - image: ghcr.io/vojtechmares/guestbook:v0.0.5
+      - image: ghcr.io/vojtechmares/guestbook:v0.0.8
         name: guestbook
         ports:
         - containerPort: 3000
           name: http
+        resources:
+          limits:
+            cpu: 10m
+            memory: 32Mi
